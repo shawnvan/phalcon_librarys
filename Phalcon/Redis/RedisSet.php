@@ -1,7 +1,7 @@
 <?php
 namespace Phalcon\Redis;
 
-class RedisSet
+class RedisSet extends RedisBase
 {
 
     public function addValue($key, $value)

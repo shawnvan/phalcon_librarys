@@ -9,6 +9,11 @@ class RedisSortedSet extends RedisBase
         return $this->_connection->zAdd($key, $score, $value);
     }
 
+    public function getValues($key)
+    {
+        return $this->revRange($key, 0, - 1, TRUE);
+    }
+
     public function count($key)
     {
         return $this->_connection->zCard($key);

@@ -6,7 +6,7 @@ use Phalcon\DI;
 class RedisBase
 {
 
-    protected  $_connection;
+    protected $_connection;
 
     public function __construct($connectionName = NULL)
     {
@@ -44,5 +44,19 @@ class RedisBase
     {
         return $this->_connection->delete($key);
     }
-    
+
+    public function randomKey()
+    {
+        return $this->_connection->randomKey();
+    }
+
+    public function info()
+    {
+        return $this->_connection->info();
+    }
+
+    public function getKeys($pattern)
+    {
+        return $this->_connection->keys($pattern);
+    }
 }
